@@ -5,6 +5,7 @@
  */
 package com.woodcomputing.fxslang.collections;
 
+import java.util.function.Predicate;
 import javafx.collections.ModifiableObservableListBase;
 import javaslang.collection.List;
 
@@ -46,6 +47,11 @@ public class ObservableSlangList<T> extends ModifiableObservableListBase<T> {
     
     public static <T> ObservableSlangList<T> ofAll(Iterable<? extends T> elements) {
         return new ObservableSlangList(elements);
+    }
+    
+    public ObservableSlangList<T> filter(Predicate<? super T> predicate) {
+        ObservableSlangList<T> obsList = ObservableSlangList.ofAll(delegate.filter(predicate));
+        return obsList;
     }
     
     @Override
