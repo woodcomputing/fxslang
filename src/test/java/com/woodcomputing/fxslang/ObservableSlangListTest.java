@@ -19,13 +19,10 @@ import org.junit.jupiter.api.DisplayName;
  */
 public class ObservableSlangListTest {
 
-    ;
-        
     @Test
     @DisplayName("Test adding an element to the list.")
     void addTest() {
-        final boolean wasAdded;
-            ObservableSlangList<Integer> testList = ObservableSlangList.empty();
+        ObservableSlangList<Integer> testList = ObservableSlangList.empty();
         testList.addListener((ListChangeListener.Change<? extends Integer> c) -> {
             c.next();
             assertTrue(c.wasAdded());
@@ -56,7 +53,8 @@ public class ObservableSlangListTest {
     }
     
     @Test
-    void createWithOf() {
+    @DisplayName("Test creation of the observable list from varargs.")
+    void createFromVarArgsTest() {
         ObservableSlangList<String> testList = ObservableSlangList.of("One", "Two", "Three");
         assertEquals(3, testList.size());
     }
