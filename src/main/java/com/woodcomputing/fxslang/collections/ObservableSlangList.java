@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * FXSlang
+ * Copyright 2016 Jonathan Wood
+ * Licensed under the Apache License, Version 2.0
  */
 package com.woodcomputing.fxslang.collections;
 
@@ -11,7 +11,8 @@ import javaslang.collection.List;
 
 /**
  *
- * @author jwood
+ * @author Jonathan Wood
+ * 
  */
 public class ObservableSlangList<T> extends ModifiableObservableListBase<T> {
 
